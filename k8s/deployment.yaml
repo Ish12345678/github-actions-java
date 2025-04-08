@@ -14,7 +14,16 @@ spec:
     spec:
       containers:
       - name: my-app
-        image: your-dockerhub-username/my-app:latest
+        image: ishimwe076/my-app:latest
+        imagePullPolicy: Always
+        
+        resources:
+          requests:
+            memory: "256Mi"
+            cpu: "200m"
+          limits:
+            memory: "512Mi"
+            cpu: "500m"
         ports:
         - containerPort: 8080
 ---
